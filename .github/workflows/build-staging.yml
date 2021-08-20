@@ -44,7 +44,7 @@ jobs:
         with:
           # List of build-time variabt of files located in the specified PATH or URL
           context: .
-          tags: ${{secrets.ACR_NAME}}/contoso-website:latest
+          tags: ${{secrets.ACR_NAME}}/contoso-website:latest,${{secrets.ACR_NAME}}/contoso-website:${{ steps.fetch_version.outputs.TAG }}
           # Push is a shorthand for --output=type=registry
           push: true
  
